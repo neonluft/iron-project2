@@ -3,8 +3,6 @@ name: Deploy to EKS
 on:
   push:
     branches: [main]
-    paths:
-      - "k8s/**"
   workflow_dispatch:
 
 # Required for OIDC: lets the job request a GitHub identity token
