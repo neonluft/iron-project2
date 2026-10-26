@@ -45,10 +45,6 @@ jobs:
           docker build -t neonluft/worker-app.amd64:latest ./docker_images/worker
           docker push neonluft/worker-app.amd64:latest
         
-      - name: Apply manifests
+      - name: Restart manifests
         run: kubectl apply -f eks-infra -R
-            # kubectl apply -f ./eks-infra/result/
-            # kubectl apply -f ./eks-infra/vote/
-            # kubectl apply -f ./eks-infra/worker/
-            # kubectl apply -f ./eks-infra/redis/
-            # kubectl apply -f ./eks-infra/ingress.yaml
+             kubectl rollout restart deployment 
