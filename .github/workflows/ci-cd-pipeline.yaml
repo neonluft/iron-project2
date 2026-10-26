@@ -52,6 +52,3 @@ jobs:
             # kubectl apply -f ./eks-infra/worker/
             # kubectl apply -f ./eks-infra/redis/
             # kubectl apply -f ./eks-infra/ingress.yaml
-
-      - name: Wait for rollout
-        run: kubectl rollout status deployment/hello --timeout=120s
