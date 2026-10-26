@@ -4,7 +4,7 @@ kind: Ingress
 metadata:
   name: path-routing
   namespace: default
-  # figure out how to strip away "/resulto" from the path before forwarding to the backend.
+  # figure out how to strip away "/result" from the path before forwarding to the backend.
   annotations:
     # Strip the path prefix before forwarding to the backend.
     # Without this, /blue is forwarded as-is but nginx only serves /.
