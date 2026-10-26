@@ -46,12 +46,12 @@ jobs:
           docker push neonluft/worker-app.amd64:latest
         
       - name: Apply manifests
-        run: kubectl apply -f ./eks-infra/postgres/ 
-             kubectl apply -f ./eks-infra/result/ 
-             kubectl apply -f ./eks-infra/vote/ 
-             kubectl apply -f ./eks-infra/worker/ 
-             kubectl apply -f ./eks-infra/redis/ 
-             kubectl apply -f ./eks-infra/ingress.yaml
+        run: kubectl apply -f ./eks-infra/postgres/
+            # kubectl apply -f ./eks-infra/result/
+            # kubectl apply -f ./eks-infra/vote/
+            # kubectl apply -f ./eks-infra/worker/
+            # kubectl apply -f ./eks-infra/redis/
+            # kubectl apply -f ./eks-infra/ingress.yaml
 
       - name: Wait for rollout
         run: kubectl rollout status deployment/hello -n  --timeout=120s
